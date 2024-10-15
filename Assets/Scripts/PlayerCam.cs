@@ -7,9 +7,6 @@ public class PlayerCam : MonoBehaviour
     public float sensX;
     public float sensY;
 
-    private float rotationX = 0f; // Control de la rotación vertical (mirar arriba/abajo)
-    private float rotationY = 0f; // Control de la rotación horizontal (girar jugador)
-
     public Transform orientation;
 
     float xRotation;
