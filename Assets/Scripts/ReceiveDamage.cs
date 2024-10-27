@@ -1,30 +1,55 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-public class ReceiveDamage : MonoBehaviour
+
+public class HealthSystem : MonoBehaviour
 {
+    public int maxHealth = 100;
+    public int damage = 10;
+    public Scrollbar healthBar;
 
-    public int health;
-    public int damage;
+    private int currentHealth;
+    private EnemyCounter enemyCounter;
 
+    void Start()
+    {
+        currentHealth = maxHealth;
+        UpdateHealthBar();
+        enemyCounter = FindObjectOfType<EnemyCounter>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-
-        if (collision.gameObject.CompareTag("Bullet")) 
+        if (collision.gameObject.CompareTag("Bullet"))
         {
-            health -= damage;
-            
-
-        }
-
-        if (health <= 0)
-        {
-            Destroy(gameObject);
+            TakeDamage(damage);
         }
     }
+
+    public void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+        if (currentHealth < 0)
+        {
+            currentHealth = 0;
+            if (enemyCounter != null)
+            {
+                enemyCounter.EnemyDefeated(gameObject);
+            }
+            Destroy(gameObject);
+        }
+        UpdateHealthBar();
+    }
+
+    private void UpdateHealthBar()
+    {
+        if (healthBar != null)
+        {
+            healthBar.size = (float)currentHealth / maxHealth;
+        }
+    }
+
     private void OnDestroy()
     {
         ScoreManager scoreManager = FindObjectOfType<ScoreManager>();
@@ -33,5 +58,4 @@ public class ReceiveDamage : MonoBehaviour
             scoreManager.AddPoint();
         }
     }
-    
 }
