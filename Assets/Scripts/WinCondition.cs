@@ -11,6 +11,7 @@ public class EnemyCounter : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         enemies = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
     }
 
@@ -31,7 +32,7 @@ public class EnemyCounter : MonoBehaviour
             HudShooter.SetActive(false);
         }
     }
-
+    
     private void VolverAJugar()
     {
         SceneManager.LoadScene(0);

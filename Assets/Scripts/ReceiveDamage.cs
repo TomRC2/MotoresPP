@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 
 public class HealthSystem : MonoBehaviour
 {
     public int maxHealth = 100;
     public int damage = 10;
     public Scrollbar healthBar;
+    
 
     private int currentHealth;
     private EnemyCounter enemyCounter;
@@ -24,6 +27,14 @@ public class HealthSystem : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             TakeDamage(damage);
+        }
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            LoseCondition loseCondition = FindObjectOfType<LoseCondition>();
+            if (loseCondition != null)
+            {
+                loseCondition.Lose();
+            }
         }
     }
 
