@@ -1286,7 +1286,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
+    m_HighlightedColor: {r: 0.2924528, g: 0.2662424, b: 0.2662424, a: 1}
     m_PressedColor: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
     m_SelectedColor: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1308,13 +1308,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1967343035}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1967343042}
+        m_TargetAssemblyTypeName: LoseCondition, Assembly-CSharp
+        m_MethodName: VolverAJugar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2021,13 +2021,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1967343035}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1967343042}
+        m_TargetAssemblyTypeName: LoseCondition, Assembly-CSharp
+        m_MethodName: VolverAJugar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2210,7 +2210,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000047684, y: 69.667}
+  m_AnchoredPosition: {x: -0, y: 69.667}
   m_SizeDelta: {x: 250.3161, y: 139.3344}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &821540075
@@ -6282,7 +6282,6 @@ MonoBehaviour:
   enemies: []
   WinPanel: {fileID: 1075050764}
   HudShooter: {fileID: 836575123}
-  LosePanel: {fileID: 789771590}
 --- !u!114 &1967343042
 MonoBehaviour:
   m_ObjectHideFlags: 0

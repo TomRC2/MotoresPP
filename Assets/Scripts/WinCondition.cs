@@ -30,11 +30,12 @@ public class EnemyCounter : MonoBehaviour
         {
             WinPanel.SetActive(true);
             HudShooter.SetActive(false);
+            ShowCursor();
         }
     }
-    
-    private void VolverAJugar()
+    public void ShowCursor()
     {
-        SceneManager.LoadScene(0);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }
